@@ -1,98 +1,98 @@
 .comment {
-	margin: 4px 0 16px 12px;
-	position: relative;
-	display: flex;
-	align-items: flex-start;
+    margin: 4px 0 16px 12px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
 }
 
 .comment__userIcon {
-	width: 26px;
-	height: 26px;
-	margin-top: 4px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+    width: 26px;
+    height: 26px;
+    margin-top: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .userIcon-a1 {
-	background-image: url("../../images/users/setC1.jpg");
+    background-image: url("../../images/users/setC1.jpg");
 }
 
 .userIcon-a2 {
-	background-image: url("../../images/users/setC2.jpg");
+    background-image: url("../../images/users/setC2.jpg");
 }
 
 .userIcon-a3 {
-	background-image: url("../../images/users/setC7.jpg");
+    background-image: url("../../images/users/setC7.jpg");
 }
 
 .userIcon-a4 {
-	background-image: url("../../images/users/setC4.jpg");
+    background-image: url("../../images/users/setC4.jpg");
 }
 
 .userIcon-a5 {
-	background-image: url("../../images/users/setC8.jpg");
+    background-image: url("../../images/users/setC8.jpg");
 }
 
 .comment__stripe {
-	height: 100%;
-	min-width: 2px;
-	margin: 0 8px;
-	border-radius: 4px;
-	background-color: rgba(0,0,0,0);
-	transition: background-color ease-in 0.2s;
+    height: 100%;
+    min-width: 2px;
+    margin: 0 8px;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0);
+    transition: background-color ease-in 0.2s;
 }
 
 .comment:hover .comment__stripe {
-	background-color: #272727;
+    background-color: #272727;
 }
 
 .comment__name, .comment__time, .comment__options {
-	padding-right: 6px;
-	font-family: "Roboto", sans-serif;
+    padding-right: 6px;
+    font-family: "Roboto", sans-serif;
 }
 
-.comment__name {	
-	font-size: 1.1rem;
-	font-weight: 500;
+.comment__name {    
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .comment__time {
-	color: #999;
-	font-size: 0.9rem;
-	font-weight: 400;
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 .comment__options {
-	user-select: none;
-	-moz-user-select: none;
-	font-size: 0.9rem;
-	font-weight: 500;
-	color: rgba(220, 91, 85, 0.5);
-	transition: color ease-in 0.1s;
+    user-select: none;
+    -moz-user-select: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(220, 91, 85, 0.5);
+    transition: color ease-in 0.1s;
 }
 
 .comment:hover .comment__options {
-	color: #dc5b55;
+    color: #dc5b55;
 }
 
 .comment__options svg {
-	height: 16px;
-	width: 16px;
-	position: relative;
-	top: 4px;
-	fill: rgba(220, 91, 85, 0.5);
-	transition: fill ease-in 0.1s;
+    height: 16px;
+    width: 16px;
+    position: relative;
+    top: 4px;
+    fill: rgba(220, 91, 85, 0.5);
+    transition: fill ease-in 0.1s;
 }
 
 .comment:hover .comment__options svg {
-	fill: #dc5b55;
+    fill: #dc5b55;
 }
 
 .comment__text {
-	margin-top: 6px;
-	padding-right: 16px;
-	font-size: 1.0rem;
-	font-family: "SegoeUI", Arial;
-	line-height: 1.35;
+    margin-top: 6px;
+    padding-right: 16px;
+    font-size: 1.0rem;
+    font-family: "SegoeUI", Arial;
+    line-height: 1.35;
 }
