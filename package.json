@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel ./src/index.html --port 80 --open",
-    "build": "parcel build ./src/index.html --no-source-maps"
+    "start_dev": "cross-env NODE_ENV=development parcel ./src/index.html --port 80 --open",
+    "start_api": "cross-env NODE_ENV=development json-server --watch ./src/utils/api/db.json --routes ./src/utils/api/routes.json",
+    "build": "cross-env NODE_ENV=production parcel build ./src/index.html --no-source-maps"
   },
   "keywords": [],
   "author": "",
@@ -13,15 +14,15 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-react": "^7.0.0",
-    "parcel-bundler": "^1.10.3",
-    "parcel-plugin-clean-dist": "0.0.6",
-    "sass": "^1.15.2"
+    "cross-env": "^5.2.0",
+    "json-server": "^0.14.2",
+    "parcel-bundler": "^1.11.0",
+    "parcel-plugin-clean-dist": "0.0.6"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "components": "^0.1.0",
+    "@babel/polyfill": "^7.2.5",
     "normalize.css": "^8.0.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
   }
 }

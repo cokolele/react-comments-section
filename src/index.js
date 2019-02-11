@@ -1,3 +1,7 @@
+//css frameworks
+import "normalize.css"
+import "/main.css";
+
 //polyfills
 /*
     import "@babel/polyfill";
@@ -8,18 +12,14 @@
     in the file /node_modules/parcel-bundler/src/transforms/babel/env.js @line 56, column 26
  */
 
-//css frameworks
-import "normalize.css"
-import "./index.css";
-
 //react
 import React from "react";
 import { render } from "react-dom";
 
-import CommentsSection from "./components/CommentsSection.jsx";
+import Comments from "/pages/Comments.jsx";
 
 const App = () => (
-    <CommentsSection/>
+    <Comments/>
 );
 
 render( <App /> , document.querySelector("#app"));

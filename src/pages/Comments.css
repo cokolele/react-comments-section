@@ -1,0 +1,22 @@
+/*
+   extra-small: 0px or larger
+   small: 600px or larger
+   medium: 960px or larger
+   large: 1280px or larger
+   xlarge: 1920px or larger
+*/
+
+.comments__wrapper {
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (min-width: 700px)
+{
+    .comments__wrapper {
+        width: 700px;
+    }
+}
