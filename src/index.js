@@ -3,9 +3,9 @@ import "normalize.css"
 import "/main.css";
 
 //polyfills
-/*
-    import "@babel/polyfill";
 
+import "@babel/polyfill";
+/*
     as of parcel < 2 version you cannot specify @babel-preset-env option useBuiltIns
     since this is such a small app and loading whole polyfill package would double the size
     i hardcoded useBuiltIns: "usage" instead of "entry"/false

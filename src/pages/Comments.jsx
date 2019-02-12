@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useContext, createContext } from "react";
 
-import api from "/utils/api/api.js";
-import commentsReducer from "/modules/comments.js";
+import api, { parseLinkHeader } from "/utils/api/api.js";
+import commentsReducer, { loadInitialComments, loadMoreComments, createComment, updateComment, removeComment } from "/modules/comments.js";
 
 import "./Comments.css";
 /*
@@ -11,19 +11,23 @@ import Divider from "./divider.jsx";
 */
 
 function CommentsSection() {
-   const [state, dispatch] = useReducer(commentsReducer, {});
+   const [state, dispatch] = useReducer(commentsReducer, { comments: []});
 
    useEffect(() => {
-      const data = api.get("/comments")
-         .then(response => response.json())
-         .then(data => {
-         	console.log(data);
-         });
+      const data = api.get("/comments?_limit=5&_page=1")
+      	.then(async (response) => {
+				const comments = await response.json();
+				const links = parseLinkHeader( response.headers.get("Link") );
+				dispatch(loadInitialComments(comments, links));
+      	});
    }, []);
 
    return (
       <div className="comments__wrapper">
       {
+         state.comments.map(comment => (
+            <div key={comment.id}>{`${comment.owner} ${comment.name} ${comment.timestamp}`}</div>
+			))
          /*
          <Divider text="Add your comment" />
          <NewComment/>

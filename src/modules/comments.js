@@ -11,13 +11,13 @@ export default function reducer(state, action) {
             return {
                 ...state,
                 comments: action.comments,
-                has_more: action.has_more
+                links: action.links
             };
         case LOAD_MORE:
             return {
                 ...state,
                 comments: [...state.comments, ...action.comments],
-                has_more: action.has_more
+                links: action.links
             };
         case CREATE:
             return {
@@ -47,12 +47,12 @@ export default function reducer(state, action) {
 }
 
 // Action Creators
-export function loadInitialComments(comments, has_more) {
-    return { type: LOAD_INITIAL, comments, has_more };
+export function loadInitialComments(comments, links) {
+    return { type: LOAD_INITIAL, comments, links };
 }
 
-export function loadMoreComments(comments, has_more) {
-    return { type: LOAD_MORE, comments, has_more};
+export function loadMoreComments(comments, links) {
+    return { type: LOAD_MORE, comments, links };
 }
 
 export function createComment(comment) {
