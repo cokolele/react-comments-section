@@ -1,0 +1,40 @@
+.avatar {
+    width: 26px;
+    height: 26px;
+    margin-top: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.type1 {
+    background-image: url("/images/users/setC1.jpg");
+}
+
+.type2 {
+    background-image: url("/images/users/setC2.jpg");
+}
+
+.type3 {
+    background-image: url("/images/users/setC7.jpg");
+}
+
+.type4 {
+    background-image: url("/images/users/setC4.jpg");
+}
+
+.type5 {
+    background-image: url("/images/users/setC5.jpg");
+}
+
+.type6 {
+    background-image: url("/images/users/setC5.jpg");
+}
+
+.type7 {
+    background-image: url("/images/users/setC5.jpg");
+}
+
+.type8 {
+    background-image: url("/images/users/setC8.jpg");
+}

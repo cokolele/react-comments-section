@@ -6,17 +6,16 @@
    xlarge: 1920px or larger
 */
 
-.comments__wrapper {
+.comments {
     margin: 0 auto;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 @media (min-width: 700px)
 {
-    .comments__wrapper {
+    .comments {
         width: 700px;
     }
 }
