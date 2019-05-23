@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start_dev": "cross-env NODE_ENV=development parcel ./src/index.html --port 80 --open",
-    "start_api": "cross-env NODE_ENV=development json-server --watch ./src/utils/api/db.json --routes ./src/utils/api/routes.json",
+    "start_api": "cross-env NODE_ENV=development json-server --watch ./src/utils/api/db.json --routes ./src/utils/api/routes.json --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production parcel build ./src/index.html --no-source-maps"
   },
   "keywords": [],
