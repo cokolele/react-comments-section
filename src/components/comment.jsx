@@ -1,23 +1,71 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+
+import { updateComment, removeComment } from "/modules/comments.js";
 
 import "./comment.css";
-import Avatar from "./avatar.jsx";
+import Avatar from "/components/avatar.jsx";
+import Option from "/components/option.jsx";
+import TextArea from "/components/textarea.jsx";
+import Button from "/components/button.jsx";
 
-function Comment({ id, name, timestamp, text }) {
-   const [editing, toggleEditing] = useState(false);
+function Comment({ dispatch, id, owner, name, timestamp, text }) {
+   const [editing, setEditing] = useState(false);
+   const [editText, setEditText] = useState(text);
+
+   const onReply = () => {
+   }
+
+   const onEdit = () => {
+      setEditing(true);
+   }
+
+   const onRemove = () => {
+      dispatch(removeComment(id));
+      setEditing(false);
+   }
+
+   const onCancel = () => {
+      setEditing(false);
+      setEditText(text);
+   }
+
+   const onSave = () => {
+      dispatch(updateComment(id, editText));
+      setEditing(false);
+   }
 
    return (
       <div className="comment">
-         <Avatar iconType={id}/>
+         <div className="comment__avatar">
+            <Avatar iconType={id % 7}/>
+         </div>
          <div className="comment__stripe"></div>
-         <div style={{width: "100%"}}>
+         <div className="comment__content">
+            <span className="comment__name">{name}</span>
+            <span className="comment__time">{timestamp}</span>
             <span>
-                  <span className="comment__name">{name}</span>
-                  <span className="comment__time">{timestamp}</span>
+               <Option reply onClick={onReply}/>
+               {
+               	owner &&
+               	<span>
+		               <Option edit onClick={onEdit}/>
+		               <Option remove onClick={onRemove}/>
+               	</span>
+               }
             </span>
-            <div style={{width: "100%"}}>
-                  <div className="comment__text">{text}</div>
-            </div>
+            {
+               editing ?
+               <TextArea value={editText} onChange={setEditText}/>
+               :
+               <div className="comment__text">{text}</div>
+            }
+            {
+               editing &&
+               <div>
+                  <Button text="Cancel" onClick={onCancel}/>
+                  <Button primary text="Save" onClick={onSave}/>
+               </div>
+            }
          </div>
       </div>
    )

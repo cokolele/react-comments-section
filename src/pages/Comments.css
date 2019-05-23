@@ -9,8 +9,6 @@
 .comments {
     margin: 0 auto;
     padding-top: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 @media (min-width: 700px)

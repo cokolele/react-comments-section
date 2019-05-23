@@ -1,45 +1,68 @@
+.comment:hover .comment__stripe {
+    background-color: #232323;
+}
+
+.comment:hover .comment__time {
+    color: #232323;
+}
+
+.comment:hover .option, .comment:hover .option svg {
+    color: rgb(220, 91, 85);
+    fill: rgb(220, 91, 85);
+}
+
+/*
+====
+*/
+
 .comment {
-    margin: 4px 20px 12px 12px;
-    position: relative;
+    padding: 4px 20px 12px 12px;
     display: flex;
+}
+
+.comment__avatar {
+    width: 26px;
+    height: 26px;
+    margin-top: 4px;
 }
 
 .comment__stripe {
     width: 2px;
-    flex-shrink: 0;
     margin: 0 8px;
+    flex-shrink: 0;
     border-radius: 4px;
     background-color: rgba(0,0,0,0);
-    transition: background-color ease-in 0.2s;
+    transition: background-color ease-in 0.15s;
 }
 
-.comment:hover .comment__stripe, .comment__stripe-active {
-    background-color: #272727 !important;
+.comment__content {
+    flex-grow: 1;
 }
 
-.comment__name, .comment__time, .comment__options {
-    padding-right: 6px;
+.comment__name, .comment__time {
+    margin-right: 6px;
     font-family: "Roboto", sans-serif;
 }
 
 .comment__name {    
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
+    letter-spacing: 0.016em;
+    color: #151515;
 }
 
 .comment__time {
     color: #999;
     font-size: 0.9rem;
     font-weight: 400;
-}
-
-.comment__options {
-    margin-bottom: 20px;
+    transition: color ease-in 0.15s;
 }
 
 .comment__text {
-    margin-top: 6px;
+    margin-top: 5px;
     font-family: "SegoeUI", Arial;
     font-size: 1.0rem;
+    color: #232323;
     line-height: 1.35;
+    word-break: break-word;
 }
