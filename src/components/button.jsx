@@ -1,14 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./button.css";
 
-function Button() {
-   const [input, setInput] = useState("");
-   return (
-      <div>
-         <button className="button" value={input} onChange={e => setInput(e.target.value)}>Hmm</button>
-      </div>
-   );
-}
+const Button = ({onClick, primary, text}) => (	
+   <button type="button" onClick={onClick} className={"button" + (primary ? " button-primary" : "")}>{text}</button>
+)
 
 export default Button

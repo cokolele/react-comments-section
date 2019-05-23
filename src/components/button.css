@@ -1,3 +1,47 @@
 .button {
-    
+    margin: 10px 8px 4px 0;
+    padding: 5px 14px;
+
+    display: inline-block;
+    position: relative;
+
+    cursor: pointer;
+
+    border: 1px #777 solid;
+    border-width: 0 0 2px 0;
+    border-radius: 4px;
+    background-color: white;
+
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+
+    font-weight: 400;
+    font-family: "Roboto", Arial;
+    font-size: 0.95rem;
+
+    transition: box-shadow 0.2s;
+}
+
+.button:hover, .button:focus {
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.8);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.8);
+    outline: 0 !important;
+}
+
+.button:active {
+    -webkit-tap-highlight-color: transparent;
+    top: 2px;
+    border-width: 0;
+}
+
+.button-primary {
+    background: #ca4153;
+    background: -webkit-linear-gradient(140deg, #ca4153, #e94057, #f27121);
+    background: -o-linear-gradient(140deg, #ca4153, #e94057, #f27121);
+    background: linear-gradient(140deg, #ca4153, #e94057, #f27121);
+    border-color: #790101;
+
+    color: white;
 }
