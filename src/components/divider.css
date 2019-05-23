@@ -1,9 +1,7 @@
 .divider {
-    margin: 0 0 16px 0;
+    margin-bottom: 16px;
     padding: 4px 14px 4px 10px;
-    align-self: flex-start;
-    user-select: none;
-    -moz-user-select: none;
+    display: inline-block;
     background-color: #272727;
     color: #fff;
     font-size: 1.5rem;

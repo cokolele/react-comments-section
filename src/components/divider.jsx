@@ -2,9 +2,9 @@ import React from "react";
 
 import "./divider.css";
 
-const Divider = (props) => (  
+const Divider = ({ text }) => (  
    <div className="divider">
-      {props.text}
+      {text}
    </div>
 )
 
