@@ -1,0 +1,11 @@
+.textarea {
+    outline: none;
+    border: none;
+    padding: 0;
+    width: 100%;
+    min-height: 18px;
+    max-height: 400px;
+    resize: none;
+    overflow: hidden;
+    display: -webkit-box;
+}

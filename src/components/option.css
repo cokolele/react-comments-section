@@ -1,0 +1,31 @@
+.option {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    
+    padding: 0 2px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-tap-highlight-color: rgba(220, 91, 85, 0.15);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: "Roboto";
+    color: rgba(220, 91, 85, 0.5);
+
+    transition: color ease-in 0.15s;
+}
+
+.option svg {
+    height: 16px;
+    width: 16px;
+
+    position: relative;
+    top: 4px;
+
+    fill: rgba(220, 91, 85, 0.5);
+
+    transition: fill ease-in 0.15s;
+}
