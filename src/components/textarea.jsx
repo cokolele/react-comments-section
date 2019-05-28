@@ -6,8 +6,8 @@ function TextArea({value, onChange, placeholder, minHeight}) {
    const ref = useRef(null);
 
    useEffect(() => {
-   	if (minHeight === undefined)
-   		minHeight = "0px";
+      if (minHeight === undefined)
+         minHeight = "0px";
       ref.current.style.minHeight = minHeight + "px";
    }, []);
 
@@ -20,12 +20,12 @@ function TextArea({value, onChange, placeholder, minHeight}) {
 
    return (
       <textarea
-      	ref={ref}
-      	value={value}
-      	onChange={(e) => { onChange(e.target.value) }}
-      	className="comment__text textarea"
-      	placeholder={placeholder}
-      	spellCheck="false"
+         ref={ref}
+         value={value}
+         onChange={(e) => { onChange(e.target.value) }}
+         className="comment__text textarea"
+         placeholder={placeholder}
+         spellCheck="false"
       />
    )
 }
