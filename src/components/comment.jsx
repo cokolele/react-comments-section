@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
+import api from "/utils/api/api.js";
 import { updateComment, removeComment } from "/modules/comments.js";
 
 import "./comment.css";
@@ -13,15 +14,20 @@ function Comment({ dispatch, id, owner, name, timestamp, text }) {
    const [editText, setEditText] = useState(text);
 
    const onReply = () => {
+      //todo
    }
 
    const onEdit = () => {
       setEditing(true);
    }
 
-   const onRemove = () => {
-      dispatch(removeComment(id));
-      setEditing(false);
+   const onRemove = async () => {
+      const response = await api.delete("/comments/" + id);
+
+      if (response.status === 200) {
+         dispatch(removeComment(id));
+         setEditing(false);
+      }
    }
 
    const onCancel = () => {
@@ -29,9 +35,15 @@ function Comment({ dispatch, id, owner, name, timestamp, text }) {
       setEditText(text);
    }
 
-   const onSave = () => {
-      dispatch(updateComment(id, editText));
-      setEditing(false);
+   const onSave = async () => {
+      const response = await api.patch("/comments/" + id, {
+         text: editText
+      });
+
+      if (response.status === 200) {
+         dispatch(updateComment(id, editText));
+         setEditing(false);
+      }
    }
 
    return (
@@ -46,11 +58,11 @@ function Comment({ dispatch, id, owner, name, timestamp, text }) {
             <span>
                <Option reply onClick={onReply}/>
                {
-               	owner &&
-               	<span>
-		               <Option edit onClick={onEdit}/>
-		               <Option remove onClick={onRemove}/>
-               	</span>
+                  owner &&
+                  <span>
+                     <Option edit onClick={onEdit}/>
+                     <Option remove onClick={onRemove}/>
+                  </span>
                }
             </span>
             {

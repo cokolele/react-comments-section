@@ -22,10 +22,10 @@ export default function reducer(state, action) {
         case CREATE:
             const newComment = {
                 id: state.comments.length + 1,
-                "owner": true,
-                "name": action.name,
-                "timestamp": "xxx",
-                "text": action.text
+                owner: true,
+                name: action.name,
+                timestamp: action.timestamp,
+                text: action.text
             };
             return {
                 ...state,
@@ -58,8 +58,8 @@ function loadMoreComments(comments, links) {
     return { type: LOAD_MORE, comments, links };
 }
 
-function createComment(name, text) {
-    return { type: CREATE, name, text };
+function createComment(name, text, timestamp) {
+    return { type: CREATE, name, text, timestamp };
 }
 
 function updateComment(id, text) {

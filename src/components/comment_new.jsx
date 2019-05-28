@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
+import api from "/utils/api/api.js";
 import { createComment } from "/modules/comments.js";
 
 import "./comment.css";
@@ -9,11 +10,21 @@ import TextArea from "/components/textarea.jsx";
 import Button from "/components/button.jsx";
 
 function Comment({ dispatch }) {
-	const [text, setText] = useState("");
+   const [text, setText] = useState("");
 
-   const onAdd = () => {
-   	if (text != "")
-      	dispatch(createComment("kokhoot", text));
+   const onAdd = async () => {
+      if (text != "") {
+         const dateNow = Date.now();
+         const response = await api.post("/comments", {
+            name: "testing_name",
+            text,
+            timestamp: dateNow,
+            owner: true
+         });
+
+         if (response.status === 201)
+            dispatch(createComment("testing_name", text, dateNow));
+      }
    }
 
    return (

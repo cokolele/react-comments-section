@@ -13,15 +13,18 @@ function Comments() {
    const [state, dispatch] = useReducer(commentsReducer, { comments: [] });
 
    useEffect(() => {
-      const data = api.get("/comments?_limit=7&_page=1")
-         .then(async (response) => {
-            const comments = await response.json();
-            const linkHeader = response.headers.get("Link");
-            if (linkHeader)
-               dispatch(loadInitialComments(comments, parseLinkHeader(linkHeader)));
-            else
-               dispatch(loadInitialComments(comments, null));
-         });
+      async function fetchComments() {
+         const response = await api.get("/comments?_limit=7&_page=1&_sort=id&_order=desc");
+         const comments = await response.json();
+
+         const linkHeader = response.headers.get("Link");
+         if (linkHeader)
+            dispatch(loadInitialComments(comments, parseLinkHeader(linkHeader)));
+         else
+            dispatch(loadInitialComments(comments, null));
+      }  
+
+      fetchComments();
    }, []);
 
    return (
