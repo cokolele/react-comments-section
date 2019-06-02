@@ -6,7 +6,7 @@ import commentsReducer, { loadInitialComments, loadMoreComments } from "/modules
 import "./Comments.css";
 import Divider from "/components/divider.jsx";
 import Comment from "/components/comment.jsx";
-import NewComment from "/components/comment_new.jsx";
+import NewComment from "/components/comment-new.jsx";
 
 
 function Comments() {

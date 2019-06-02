@@ -9,7 +9,7 @@ import Option from "/components/option.jsx";
 import TextArea from "/components/textarea.jsx";
 import Button from "/components/button.jsx";
 
-function Comment({ dispatch }) {
+function CommentNew({ dispatch }) {
    const [text, setText] = useState("");
 
    const onAdd = async () => {
@@ -43,4 +43,4 @@ function Comment({ dispatch }) {
    )
 }
 
-export default Comment;
+export default CommentNew;
