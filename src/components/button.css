@@ -3,14 +3,12 @@
     padding: 5px 14px;
 
     display: inline-block;
-    position: relative;
-
     cursor: pointer;
 
-    border: 1px #777 solid;
+    border: 0 #777 solid;
     border-width: 0 0 2px 0;
-    border-radius: 4px;
     background-color: white;
+    border-radius: 4px;
 
     -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
@@ -32,8 +30,8 @@
 
 .button:active {
     -webkit-tap-highlight-color: transparent;
-    top: 2px;
     border-width: 0;
+    margin-top: 12px;
 }
 
 .button-primary {
