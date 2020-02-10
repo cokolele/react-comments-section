@@ -8,7 +8,6 @@ import Divider from "/components/divider.jsx";
 import Comment from "/components/comment.jsx";
 import NewComment from "/components/comment-new.jsx";
 
-
 function Comments() {
    const [state, dispatch] = useReducer(commentsReducer, { comments: [] });
 

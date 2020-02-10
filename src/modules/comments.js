@@ -1,4 +1,4 @@
-const LOAD_INITIAL = "rc/comments/LOAD_INITIAL",
+const LOAD_INITIAL = "rcs/comments/LOAD_INITIAL",
     LOAD_MORE = "rcs/comments/LOAD_MORE",
     CREATE = "rcs/comments/CREATE",
     UPDATE = "rcs/comments/UPDATE",
@@ -44,7 +44,7 @@ export default function reducer(state, action) {
                 ...state,
                 comments: state.comments.filter(comment => comment.id !== action.id),
             }
-        default: 
+        default:
             return state;
     }
 }
