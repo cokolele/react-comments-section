@@ -1,6 +1,6 @@
 # Comments section built with react
 
-Comments sections were always my first projekt when i was learning some web tech
+Unfinished
 
 ## Preview
 
